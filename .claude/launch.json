@@ -1,0 +1,10 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "heatmap",
+      "url": "http://localhost:3000/dashboard.html",
+      "port": 3000
+    }
+  ]
+}
