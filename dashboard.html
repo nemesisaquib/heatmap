@@ -406,7 +406,7 @@ header {
 const $ = s => document.querySelector(s);
 const $$ = s => document.querySelectorAll(s);
 
-let API = localStorage.getItem('hmp_api') || 'http://localhost:3000';
+let API = localStorage.getItem('hmp_api') || (location.protocol.startsWith('http') ? location.origin : 'http://localhost:3000');
 let projectId = localStorage.getItem('hmp_pid') || null;
 let metric = 'clicks';
 let liveTimer = null;
