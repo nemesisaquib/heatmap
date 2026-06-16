@@ -671,7 +671,17 @@ $('#exportImg').onclick = () => {
 (async () => {
   await ping();
   setInterval(ping, 10000);
-  if(projectId){ updateSnippet(); refresh(); }
+  const params = new URLSearchParams(location.search);
+  const qProject = params.get('project');
+  const qSite = params.get('site');
+  if(qProject){
+    projectId = qProject;
+    localStorage.setItem('hmp_pid', projectId);
+    if(qSite){ $('#urlInput').value = qSite; $('#addr').textContent = qSite; lastUrl = qSite; loadSite(qSite); }
+    updateSnippet();
+    refresh();
+    toast('Loaded project ' + qProject.slice(0,8) + '…', 'ok');
+  } else if(projectId){ updateSnippet(); refresh(); }
 })();
 </script>
 </body>

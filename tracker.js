@@ -40,7 +40,7 @@
   // Track clicks
   document.addEventListener('click', function(e) {
     const el = e.target.closest('a, button, [role="button"], input, textarea, select');
-    sendEvent('click', {
+    sendEvent('clicks', {
       x: e.pageX,
       y: e.pageY,
       element: el ? {
