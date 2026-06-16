@@ -124,6 +124,7 @@ app.get('/tracker.js', (req, res) => {
   res.sendFile(path.join(__dirname, 'tracker.js'));
 });
 app.get('/dashboard.html', (req, res) => res.sendFile(path.join(__dirname, 'dashboard.html')));
+app.get('/stats.html', (req, res) => res.sendFile(path.join(__dirname, 'stats.html')));
 app.get('/', (req, res) => res.redirect('/dashboard.html'));
 app.get('/api/health', (req, res) => res.json({ status: 'ok', db: ready ? 'connected' : 'connecting' }));
 
